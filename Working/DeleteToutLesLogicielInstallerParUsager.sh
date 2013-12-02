@@ -6,7 +6,7 @@ Version : 1.0
 
 CommentaireMultiLigne
 
-if [ cat /etc/issue != "Ubuntu 13.04 \n \l"];
+if [ "$(lsb_release -r | cut -b 10-14)" != '13.04' ];
 then
 	echo "Tu n'utilises pas la version 13.04! Les fichiers .manifest sont peut-être erronnés"
 	read -p "Es-tu certain de vouloir continuer?" choix
