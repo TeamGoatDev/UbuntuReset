@@ -6,6 +6,19 @@ Version : 1.0
 
 CommentaireMultiLigne
 
+if [ cat /etc/issue != "Ubuntu 13.04 \n \l"];
+then
+	echo "Tu n'utilises pas la version 13.04! Les fichiers .manifest sont peut-être erronnés"
+	read -p "Es-tu certain de vouloir continuer?" choix
+	case $choi in
+		[Oo]* ) 
+			echo "Chill. Tu choisis";;
+		[Nn]* )
+			echo "Sage decision"
+			exit 1;;	
+	esac
+
+fi
 
 comm -3 <(cat filesystem.manifest | awk '{print $1}' | sort) <(cat filesystem.manifest-remove | sort) > default.txt
 echo "le fichier contenant les apps par défaut  a été créé"
