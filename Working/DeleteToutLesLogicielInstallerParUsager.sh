@@ -11,6 +11,7 @@ CommentaireMultiLigne
 if [ "$(lsb_release -r | cut -b 10-14)" != '13.04' ];
 then
 	echo "Tu n'utilises pas la version 13.04! Les fichiers .manifest sont peut-être erronnés"
+	echo "Si tu n'es pas certain de ce que tu fais, vas lire le fichier README.md"
 	read -p "Es-tu certain de vouloir continuer?" choix
 	case $choix in
 		[Oo]* ) 
