@@ -2,6 +2,8 @@
 :<<CommentaireMultiLigne
 Créé le : 25 novembre 2013
 Par : Xavier Hudon-Dansereau
+Modifications : Mixbo
+#Team Goat https://github.com/TeamGoatDev
 Version : 1.0
 
 CommentaireMultiLigne
