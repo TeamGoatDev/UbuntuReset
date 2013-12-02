@@ -2,10 +2,28 @@
 :<<CommentaireMultiLigne
 Créé le : 25 novembre 2013
 Par : Xavier Hudon-Dansereau
+Modifications : Mixbo
+#Team Goat https://github.com/TeamGoatDev
 Version : 1.0
 
 CommentaireMultiLigne
 
+if [ "$(lsb_release -r | cut -b 10-14)" != '13.04' ];
+then
+	echo "Tu n'utilises pas la version 13.04! Les fichiers .manifest sont peut-être erronnés"
+	echo "Si tu n'es pas certain de ce que tu fais, vas lire le fichier README.md"
+	read -p "Es-tu certain de vouloir continuer?" choix
+	case $choix in
+		[Oo]* ) 
+			echo "Chill. Tu choisis";;
+		[Nn]* )
+			echo "Sage decision"
+			exit 1;;	
+	esac
+else
+	echo "Version 13.04 détectée"
+
+fi
 
 comm -3 <(cat filesystem.manifest | awk '{print $1}' | sort) <(cat filesystem.manifest-remove | sort) > default.txt
 echo "le fichier contenant les apps par défaut  a été créé"
