@@ -19,6 +19,8 @@ then
 			echo "Sage decision"
 			exit 1;;	
 	esac
+else
+	echo "Version 13.04 détectée"
 
 fi
 
